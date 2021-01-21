@@ -6,12 +6,12 @@ import numpy as np
 #---------------------------------#
 # Page layout
 ## Page expands to full width
-st.set_page_config(page_title='Lumendi Data Analyist App',
+st.set_page_config(page_title='Lumendi Data Analysis App',
     layout='wide')
 
 #---------------------------------#
 st.write("""
-# Lumendi Data Analyist App
+# Lumendi Data Analysis App
 In this implementation, you can choose a Excel data table from your computer can analyze it.
 """)
 
