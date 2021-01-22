@@ -1,7 +1,8 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 #---------------------------------#
 # Page layout
@@ -35,6 +36,22 @@ st.subheader('Dataset')
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
     st.write(df)
+    st.set_option('deprecation.showPyplotGlobalUse', False)
+    st.write("""
+    ### Surgery Time by Group
+    """)
+    sns.boxplot(x="Randomization", y="SurgeryTime", palette="husl", data=df)
+    st.pyplot()
+
+    # g = sns.catplot(x="MonthProc", y="SurgeryTime", hue="Randomization", kind="bar", palette="husl", ci=95, data=df)
+    # g.set_xticklabels(rotation=45)
+    # st.pyplot()
+    st.write("""
+    ### Surgery Time by Month
+    """)
+    l = sns.pointplot(x="MonthProc", y="SurgeryTime", hue="Randomization", err_style="bars", ci=95, data=df, dodge=0.4, join=True)
+    plt.setp(l.get_xticklabels(), rotation=45)
+    st.pyplot()
 
 else:
     st.info('Awaiting for CSV file to be uploaded.')
@@ -46,3 +63,5 @@ else:
 
         st.markdown('The **Diabetes** dataset is used as the example.')
         st.write(df.head(5))
+
+
