@@ -22,7 +22,7 @@ st.set_page_config(page_title='Lumendi Data Analysis App',
 #---------------------------------#
 st.write("""
 # Lumendi Data Analysis App
-In this implementation, you can choose a Excel data table from your computer can analyze it.
+In this implementation, you can choose a Excel data table from your computer and analyze it.
 """)
 
 #---------------------------------#
