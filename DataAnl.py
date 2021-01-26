@@ -16,12 +16,12 @@ from pandas.io.json import json_normalize
 #---------------------------------#
 # Page layout
 ## Page expands to full width
-st.set_page_config(page_title='Lumendi Data Analysis App',
+st.set_page_config(page_title='Demo Data Analysis App',
     layout='wide')
 
 #---------------------------------#
 st.write("""
-# Lumendi Data Analysis App
+# Demo Data Analysis App
 In this implementation, you can choose a Excel data table from your computer and analyze it.
 """)
 
@@ -66,7 +66,6 @@ if uploaded_file is not None:
 else:
     st.info('Awaiting for CSV file to be uploaded.')
     if st.button('Press to use Example Dataset'):
-
 
         url = 'http://logecal.us/VAS/Data'        
         
